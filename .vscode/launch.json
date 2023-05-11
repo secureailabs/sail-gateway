@@ -1,0 +1,5 @@
+{
+    "configurations": [
+        { "name": "Python: FastAPI", "type": "python", "cwd": "${workspaceFolder}/dns-server", "request": "launch", "module": "uvicorn", "args": [ "main:app", "--reload" ], "jinja": true, "justMyCode": true }
+    ]
+}
