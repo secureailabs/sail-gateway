@@ -30,6 +30,8 @@ RUN pip3 install poetry
 COPY poetry.lock pyproject.toml /
 RUN poetry config virtualenvs.create false && poetry install
 
+RUN apt-get install dnsutils -y
+
 # Copy the application
 COPY dns-server /app
 
@@ -38,5 +40,6 @@ COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+
 
 ENTRYPOINT [ "/entrypoint.sh" ]
