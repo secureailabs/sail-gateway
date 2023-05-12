@@ -2,7 +2,7 @@ import redis
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
-app = FastAPI(name="DNS Server")
+app = FastAPI(title="SAIL DNS Management")
 redis_instance = redis.Redis(host='localhost', port=6379, decode_responses=True)
 
 class DomainData(BaseModel):

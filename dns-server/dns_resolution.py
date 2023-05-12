@@ -1,12 +1,13 @@
 import redis
-from dnslib import AAAA, QTYPE, RCODE, RR, A, DNSError, DNSRecord
+from dnslib import QTYPE, RCODE, RR, A, DNSRecord
 from dnslib.server import BaseResolver, DNSServer
 
 # Hardcoded DNS resolutions in a dictionary
 dns_records = {
     "example.com.": "172.20.100.11",
     "test.com.": "192.0.2.2",
-    "dnscrud.": "127.0.0.1"
+    "dnscrud.": "127.0.0.1",
+    "foo.secureailabs.test.": "127.0.0.1",
 }
 
 redis_instance = redis.Redis(host='localhost', port=6379, decode_responses=True)
