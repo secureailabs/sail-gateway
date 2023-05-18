@@ -15,7 +15,8 @@ RUN apt-get update && \
   nginx \
   lsb-release \
   python3 \
-  python3-pip
+  python3-pip \
+  jq
 
 # Install redis
 RUN curl -fsSL https://packages.redis.io/gpg | gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
