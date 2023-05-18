@@ -41,5 +41,4 @@ COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-
 ENTRYPOINT [ "/entrypoint.sh" ]

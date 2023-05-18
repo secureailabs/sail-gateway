@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+# Copy the root domain from the the initialization vector json file
+ROOT_DOMAIN=$(cat /InitializationVector.json | jq -r '.root_domain')
+sed -i "s/\${ROOT_DOMAIN}/$ROOT_DOMAIN/g" /etc/nginx/nginx.conf
+
 # Start the nginx server
 nginx -g 'daemon off;' 2>&1 | tee /app/nginx.log &
 
